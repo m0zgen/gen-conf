@@ -1,0 +1,13 @@
+[Service]
+WorkingDirectory=$WORK_DIR
+ExecStart=/usr/bin/node $WORK_DIR/index.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=$APP_NAME
+User=$APP_USER
+Group=$APP_USER
+Environment=NODE_ENV=$ENVS
+
+[Install]
+WantedBy=multi-user.target
